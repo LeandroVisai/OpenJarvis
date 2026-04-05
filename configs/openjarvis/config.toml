@@ -110,5 +110,16 @@ host = "0.0.0.0"
 port = 8000
 agent = "native_openhands"
 
+[speech]
+backend = "faster-whisper"                # Local STT - no API keys needed
+model = "base"                            # tiny, base, small, medium, large-v3
+device = "auto"                           # auto, cpu, cuda
+compute_type = "float16"                  # float16, int8, float32
+language = ""                             # "" = auto-detect
+
+[tts]
+backend = "kokoro"                        # Local TTS - fully open-source
+voice_id = "af_heart"                     # af_heart, af_bella, am_adam, am_michael
+
 [security]
 enabled = false                           # Disable for eval (no PII scanning overhead)
